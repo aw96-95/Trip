@@ -37,12 +37,72 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+/* ---------- passcode screen ---------- */
+body.locked { overflow: hidden; }
+body.locked header, body.locked main, body.locked nav { display: none; }
+
+#gate {
+  position: fixed;
+  inset: 0;
+  background: var(--accent-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 50;
+}
+.gate-box { width: 100%; max-width: 320px; text-align: center; }
+.gate-emoji { font-size: 46px; }
+.gate-box h2 { margin: 10px 0 18px; font-size: 21px; }
+#gate-input {
+  width: 100%;
+  padding: 14px;
+  font-size: 26px;
+  text-align: center;
+  letter-spacing: 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--ink);
+}
+#gate-submit {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
+  font: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+}
+#gate-error { color: #b3261e; font-size: 15px; min-height: 22px; margin: 10px 0 0; }
+@media (prefers-color-scheme: dark) { #gate-error { color: #ff9a90; } }
+
 /* ---------- header ---------- */
 header {
+  position: relative;
   padding: 22px var(--pad) 16px;
   background: var(--accent-bg);
   border-bottom: 1px solid var(--line);
 }
+#lang-toggle {
+  position: absolute;
+  top: 18px;
+  right: var(--pad);
+  padding: 7px 14px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+header h1 { padding-right: 88px; }
 header h1 { margin: 0; font-size: 26px; line-height: 1.2; }
 header p  { margin: 6px 0 0; color: var(--ink-soft); font-size: 15px; }
 .countdown {

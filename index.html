@@ -8,9 +8,21 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧳</text></svg>">
 </head>
-<body>
+<body class="locked">
+
+  <!-- passcode screen; removed from the page once unlocked -->
+  <div id="gate">
+    <div class="gate-box">
+      <div class="gate-emoji">🧳</div>
+      <h2 id="gate-title">Enter the code</h2>
+      <input id="gate-input" type="tel" inputmode="numeric" autocomplete="off" maxlength="8" aria-label="Passcode">
+      <button id="gate-submit">Open</button>
+      <p id="gate-error"></p>
+    </div>
+  </div>
 
   <header>
+    <button id="lang-toggle" type="button">हिंदी</button>
     <h1 id="trip-title">Our Family Trip</h1>
     <p id="trip-sub"></p>
     <div class="countdown" id="countdown"></div>
@@ -25,11 +37,11 @@
   </main>
 
   <nav>
-    <button data-view="today"  aria-selected="true"><span class="ico">🏠</span>Today</button>
-    <button data-view="plan"   aria-selected="false"><span class="ico">🗓️</span>Plan</button>
-    <button data-view="travel" aria-selected="false"><span class="ico">✈️</span>Travel</button>
-    <button data-view="bags"   aria-selected="false"><span class="ico">🧳</span>Bags</button>
-    <button data-view="check"  aria-selected="false"><span class="ico">✅</span>Checklist</button>
+    <button data-view="today"  data-ui="today"     aria-selected="true"><span class="ico">🏠</span><span class="label">Today</span></button>
+    <button data-view="plan"   data-ui="plan"      aria-selected="false"><span class="ico">🗓️</span><span class="label">Plan</span></button>
+    <button data-view="travel" data-ui="travelTab" aria-selected="false"><span class="ico">✈️</span><span class="label">Travel</span></button>
+    <button data-view="bags"   data-ui="bags"      aria-selected="false"><span class="ico">🧳</span><span class="label">Bags</span></button>
+    <button data-view="check"  data-ui="checkTab"  aria-selected="false"><span class="ico">✅</span><span class="label">Checklist</span></button>
   </nav>
 
   <script src="trip-data.js"></script>
