@@ -11,8 +11,11 @@
   --pad:       16px;
 }
 
+/* Dark palette. Applied when the phone is set to dark mode, unless the page
+   has been explicitly stamped light; and again when explicitly stamped dark,
+   so an in-page theme choice wins over the phone setting either way. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg:        #17150f;
     --card:      #23201a;
     --ink:       #f3ede2;
@@ -22,6 +25,16 @@
     --accent-bg: #33261c;
     --green:     #7fc09a;
   }
+}
+:root[data-theme="dark"] {
+  --bg:        #17150f;
+  --card:      #23201a;
+  --ink:       #f3ede2;
+  --ink-soft:  #b3a999;
+  --line:      #37322a;
+  --accent:    #f0a06a;
+  --accent-bg: #33261c;
+  --green:     #7fc09a;
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
