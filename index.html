@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b4531f">
+  <title>Our Family Trip</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧳</text></svg>">
+</head>
+<body>
+
+  <header>
+    <h1 id="trip-title">Our Family Trip</h1>
+    <p id="trip-sub"></p>
+    <div class="countdown" id="countdown"></div>
+  </header>
+
+  <main>
+    <section id="view-today"></section>
+    <section id="view-plan"   hidden></section>
+    <section id="view-travel" hidden></section>
+    <section id="view-bags"   hidden></section>
+    <section id="view-check"  hidden></section>
+  </main>
+
+  <nav>
+    <button data-view="today"  aria-selected="true"><span class="ico">🏠</span>Today</button>
+    <button data-view="plan"   aria-selected="false"><span class="ico">🗓️</span>Plan</button>
+    <button data-view="travel" aria-selected="false"><span class="ico">✈️</span>Travel</button>
+    <button data-view="bags"   aria-selected="false"><span class="ico">🧳</span>Bags</button>
+    <button data-view="check"  aria-selected="false"><span class="ico">✅</span>Checklist</button>
+  </nav>
+
+  <script src="trip-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
